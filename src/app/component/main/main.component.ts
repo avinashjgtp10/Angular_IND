@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  public arr=[2,3,4,5,6,7,8]
   constructor() { }
 
   ngOnInit() {
