@@ -1,0 +1,5 @@
+<input type="text" value="ad" [(ngModel)]="name">
+{{name.length}}
+<button [disabled]="name.length >3">Disabled Button</button>
+<p>Today is {{name | uppercase}}</p>
+<p>Reverse String {{name | reverseString}}</p>
