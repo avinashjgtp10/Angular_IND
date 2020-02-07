@@ -1,9 +1,18 @@
 <input type="text" value="ad" [(ngModel)]="name">
-{{name.length}}
-<button [disabled]="name.length >3">Disabled Button</button>
-<p>Today is {{name | uppercase}}</p>
-<p>Reverse String {{name | reverseString}}</p>
-<ul>
+
+<p [appMyDirective]="name">Highlight me!</p>
+
+<select (change)="changevale($event)">
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+    <option value="pink">pink</option>
+</select>
+
+<!-- <button [disabled]="name.length >3">Disabled Button</button> -->
+<!-- <p appMyDirective>Today is {{name | uppercase}}</p>
+<p>Reverse String {{name | reverseString}}</p> -->
+<!-- <ul>
     <li *ngFor="let value of arr">{{value}}</li>
-</ul>
-<span *ngIf="name.length >3">Hello </span>
+</ul> -->
+<!-- <span *ngIf="name.length >3" [ngStyle]="{'color':name.length >6 ? 'blue': 'yellow'}" >{{oneWay}} </span>
+<span *ngIf="name.length > 2" [ngClass]="name.length > 4 ? 'myClass':'' " >{{name}} </span> -->

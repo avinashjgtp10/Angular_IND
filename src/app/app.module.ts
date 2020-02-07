@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { CustomPipe } from './pipes/custom.pipe';
 import { MainComponent } from './component/main/main.component';
 import { SectionComponent } from './component/section/section.component';
+import { MyDirectiveDirective } from './directive/my-directive.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomPipe,
     MainComponent,
-    SectionComponent
+    SectionComponent,
+    MyDirectiveDirective
   ],
   imports: [
     BrowserModule,
