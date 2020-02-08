@@ -6,6 +6,8 @@ import { CustomPipe } from './pipes/custom.pipe';
 import { MainComponent } from './component/main/main.component';
 import { SectionComponent } from './component/section/section.component';
 import { MyDirectiveDirective } from './directive/my-directive.directive';
+import { ParentComponent } from './component/parent/parent.component';
+import { ChildComponent } from './component/child/child.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { MyDirectiveDirective } from './directive/my-directive.directive';
     CustomPipe,
     MainComponent,
     SectionComponent,
-    MyDirectiveDirective
+    MyDirectiveDirective,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

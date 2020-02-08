@@ -1,0 +1,8 @@
+<div class="container">
+Hello I am Parent Component
+<input type="text" [(ngModel)]="messageFromChild">
+</div>
+
+<app-child [dataFromParent]="messageFromChild" (dataFromChild)="myData($event)"></app-child>
+
+
