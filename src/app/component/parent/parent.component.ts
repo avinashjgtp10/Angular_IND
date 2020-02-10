@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../../service/data.service"
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-parent',
@@ -7,13 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-  messageFromChild="Hello i am from parent"
-  constructor() { }
-
-  ngOnInit() {
+  messageFromChild="i am previous value"
+  constructor(private service:DataService) { 
+    console.log("hello i am constructor",service.getData())
+    service.getData().subscribe((data)=>{
+      console.log(data)
+    })
   }
+  // ngOnChanges(){
+  //   console.log("ng changes")
+  // }
+  ngOnInit() {
+      console.log("ng on Init")
+  }
+  // ngDoCheck(){
+  //   console.log("ng do check")
+  // }
+  // ngAfterContentInit(){
+  //   console.log("ngAfterContentInit()")
+  // }
+  // ngAfterViewInit(){
+  //   console.log("ngAfterViewInit()")
+  // }
+  // ngAfterViewChecked(){
+  //   console.log("ngAfterViewChecked()")
+  // }
+  // ngOnDestroy(){
+  //   console.log("ngOnDestroy  ")
+  // }
 
-  myData(e){
+  myData(e:any){
     this.messageFromChild=e
   }
 }

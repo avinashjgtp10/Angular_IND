@@ -8,6 +8,9 @@ import { SectionComponent } from './component/section/section.component';
 import { MyDirectiveDirective } from './directive/my-directive.directive';
 import { ParentComponent } from './component/parent/parent.component';
 import { ChildComponent } from './component/child/child.component';
+import { ColorSampleComponent } from './component/color-sample/color-sample.component';
+import { HttpClient, HttpClientModule } from "@angular/common/http"
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -17,11 +20,13 @@ import { ChildComponent } from './component/child/child.component';
     SectionComponent,
     MyDirectiveDirective,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    ColorSampleComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
