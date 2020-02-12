@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,Output,EventEmitter,OnChanges } from '@angular/core';
+import { Component, OnInit, Input,Output,EventEmitter,OnChanges,ContentChild } from '@angular/core';
 
 
 @Component({
@@ -17,12 +17,15 @@ export class ChildComponent implements  OnChanges {
   }
 
   ngOnChanges(change){
-    console.log(change.dataFromParent.previousValue,change.dataFromParent.currentValue)
+    //console.log(change.dataFromParent.previousValue,change.dataFromParent.currentValue)
   }
   ngDoCheck(value){
-    console.log("calling do check",value)
+    console.log("calling do check",this.dataFromParent)
   }
 
+  ngAfterContentInit(){
+    console.log("calling in after content init")
+  }
   passDate(e){
     this.dataFromChild.emit(e.target.value)
     console.log(e.target.value)

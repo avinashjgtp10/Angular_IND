@@ -11,6 +11,9 @@ import { ChildComponent } from './component/child/child.component';
 import { ColorSampleComponent } from './component/color-sample/color-sample.component';
 import { HttpClient, HttpClientModule } from "@angular/common/http"
 import { from } from 'rxjs';
+import { MessageComponent } from './component/message/message.component';
+import { MessageContainComponent } from './component/message-contain/message-contain.component';
+import { LifecycleContentParentComponent } from './component/lifecycle-content-parent/lifecycle-content-parent.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { from } from 'rxjs';
     MyDirectiveDirective,
     ParentComponent,
     ChildComponent,
-    ColorSampleComponent
+    ColorSampleComponent,
+    MessageComponent,
+    MessageContainComponent,
+    LifecycleContentParentComponent
   ],
   imports: [
     BrowserModule,

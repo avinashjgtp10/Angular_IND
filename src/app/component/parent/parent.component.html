@@ -1,8 +1,12 @@
-<div class="container">
+<!-- <div class="container">
 Hello I am Parent Component
 <input type="text" [(ngModel)]="messageFromChild">
 </div>
 
-<app-child [dataFromParent]="messageFromChild" (dataFromChild)="myData($event)"></app-child>
+<app-child [dataFromParent]="messageFromChild" (dataFromChild)="myData($event)"></app-child> -->
 
+<!-- <app-message [message]='message'></app-message> -->
 
+<app-message-contain>
+    <app-message *ngFor="let f of message" [message]='f'></app-message>
+</app-message-contain>
