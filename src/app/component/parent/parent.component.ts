@@ -18,9 +18,9 @@ export class ParentComponent implements OnInit,AfterViewInit {
   message:any
 
   constructor(private service:DataService,private cd:ChangeDetectorRef) { 
-    // service.getData().subscribe((data)=>{
-    //   console.log(data)
-    // })
+    service.getData().subscribe((data)=>{
+      console.log(data)
+    })
   }
   ngAfterViewInit(){
     // console.log(this.viewChild)

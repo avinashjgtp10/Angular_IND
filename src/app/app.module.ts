@@ -14,6 +14,7 @@ import { from } from 'rxjs';
 import { MessageComponent } from './component/message/message.component';
 import { MessageContainComponent } from './component/message-contain/message-contain.component';
 import { LifecycleContentParentComponent } from './component/lifecycle-content-parent/lifecycle-content-parent.component';
+import { ObservableExampleComponent } from './component/observable-example/observable-example.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LifecycleContentParentComponent } from './component/lifecycle-content-p
     ColorSampleComponent,
     MessageComponent,
     MessageContainComponent,
-    LifecycleContentParentComponent
+    LifecycleContentParentComponent,
+    ObservableExampleComponent
   ],
   imports: [
     BrowserModule,

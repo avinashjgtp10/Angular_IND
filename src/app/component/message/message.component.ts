@@ -8,7 +8,13 @@ import { Component, OnInit,Input } from '@angular/core';
 export class MessageComponent implements OnInit {
   @Input() message:string;
   constructor() { }
+ngOnChanges(change){
+  console.log(change)
+}
 
+ngDoCheck(){
+  console.log("Do check")
+}
   ngOnInit() {
   }
   myfunction(){

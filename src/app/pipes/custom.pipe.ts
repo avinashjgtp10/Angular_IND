@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'reverseString'
+  name: 'reverseString',
+  pure:true
 })
 export class CustomPipe implements PipeTransform {
 
@@ -10,6 +11,7 @@ export class CustomPipe implements PipeTransform {
     for (var i = value.length - 1; i >= 0; i--) {
       newStr += value.charAt(i);
     }
+    console.log("change")
     return newStr;
   }
 

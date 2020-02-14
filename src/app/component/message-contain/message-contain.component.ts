@@ -27,9 +27,7 @@ export class MessageContainComponent implements OnInit {
     })
     this.cd.detectChanges();
   }
-  ngOnDestroy(){
-    console.log("after distory")
-  }
+
   
 
 }

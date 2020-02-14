@@ -13,6 +13,7 @@ export class LifecycleContentParentComponent implements OnInit,AfterViewInit {
  @ViewChildren(MessageComponent) myViewChildren:QueryList<MessageComponent>;
 
   constructor(private cd:ChangeDetectorRef) { }
+  
 
   ngOnInit() {
   this.message="Hello !"
