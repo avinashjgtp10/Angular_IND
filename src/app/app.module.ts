@@ -15,6 +15,10 @@ import { MessageComponent } from './component/message/message.component';
 import { MessageContainComponent } from './component/message-contain/message-contain.component';
 import { LifecycleContentParentComponent } from './component/lifecycle-content-parent/lifecycle-content-parent.component';
 import { ObservableExampleComponent } from './component/observable-example/observable-example.component';
+import { SubjectComponent } from './component/subject/subject.component';
+import { TempleteFormComponent } from './component/templete-form/templete-form.component';
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import { ObservableExampleComponent } from './component/observable-example/obser
     MessageComponent,
     MessageContainComponent,
     LifecycleContentParentComponent,
-    ObservableExampleComponent
+    ObservableExampleComponent,
+    SubjectComponent,
+    TempleteFormComponent
   ],
   imports: [
     BrowserModule,
