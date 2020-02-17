@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CustomPipe } from './pipes/custom.pipe';
 import { MainComponent } from './component/main/main.component';
@@ -17,6 +17,7 @@ import { LifecycleContentParentComponent } from './component/lifecycle-content-p
 import { ObservableExampleComponent } from './component/observable-example/observable-example.component';
 import { SubjectComponent } from './component/subject/subject.component';
 import { TempleteFormComponent } from './component/templete-form/templete-form.component';
+import { ReactiveFormComponent } from './component/reactive-form/reactive-form.component';
 
 
 
@@ -35,11 +36,13 @@ import { TempleteFormComponent } from './component/templete-form/templete-form.c
     LifecycleContentParentComponent,
     ObservableExampleComponent,
     SubjectComponent,
-    TempleteFormComponent
+    TempleteFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
