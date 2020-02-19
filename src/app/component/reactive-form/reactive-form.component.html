@@ -1,5 +1,7 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-  
+  <div formArrayName="arr" *ngFor="let a of formGroup.get('arr').controls;let i = index">
+    
+    <div [formGroupName]="i">
     <label>
       First Name:
       <input type="text" formControlName="firstName">
@@ -10,6 +12,9 @@
       <input type="text" formControlName="lastName">
     </label>
 
+    <button (click)="remove(i)">X</button>
+    </div>
+  </div>
     <div formGroupName="address">
         <h3>Address</h3>
       
@@ -36,7 +41,8 @@
 
       {{formGroup.status}}
 
-     <button   class="btn btn-success" type="submit" [disabled]="!formGroup.valid" >Add</button>
+     <button   class="btn btn-success" type="submit" [disabled]="!formGroup.valid" >save</button>
+     <button   class="btn btn-success" type="submit"  (click)="addItem()">Add</button>
      <button class="btn btn-primary" (click)="updateForm()">Update</button>         
 
   </form>
