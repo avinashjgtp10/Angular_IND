@@ -10,18 +10,17 @@ export class ReactiveFormComponent implements OnInit {
 
   arr:FormArray;
   formGroup:FormGroup;
+  validation_messages={
+    'email': [
+      { type: 'required', message: 'Email is required.' },
+      { type: 'pattern', message: 'Please enter a valid email.' }
+    ],
+    'password':[
+      { type: 'required', message: 'password is required.' },
+      {type:"minLength",message:"Minimum length should be 6"}
+    ]
+  }
 
-
-  // formGroup=new FormGroup({
-  //   firstName:new FormControl(),
-  //   lastName:new FormControl(),
-  //   address:new FormGroup({
-  //     street: new FormControl(''),
-  //     city: new FormControl(''),
-  //     state: new FormControl(''),
-  //     zip: new FormControl('')
-  //   })
-  // });
 
 
 
@@ -29,23 +28,35 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit() {
     this.formGroup = this.fb.group({
-      
+      email: ['',Validators.compose([Validators.required,Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")])],
+      password: ['',Validators.compose([Validators.required,Validators.pattern[""],Validators.minLength(6) ])],
       address: this.fb.group({
+        address:[],
+        address2:[],
         street:  [''],
         city: [''],
         state: [''],
         zip: ['']
-      }),
-      arr:this.fb.array([
-        this.createItem()
-      ])
-    });
+      })
+    })
+      // arr:this.fb.array([
+      //   this.createItem()
+      // ])
+   // });
   }
 
   createItem(){
     return this.fb.group({
-      firstName: ['',Validators.required],
-      lastName: [''],
+      email: ['',Validators.required],
+      password: [''],
+      address: this.fb.group({
+        address:[],
+        address2:[],
+        street:  [''],
+        city: [''],
+        state: [''],
+        zip: ['']
+      })
     })
   }
 
@@ -55,9 +66,10 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   remove(index){
-    this.arr=this.formGroup.get('arr') as FormArray
-    this.formGroup.removeControl(index) 
-    console.log(index,)
+     this.arr=this.formGroup.get('arr') as FormArray
+        if(this.arr.length > 1){
+          this.arr.removeAt(index)
+        }
   }
 
 

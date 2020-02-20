@@ -1,20 +1,18 @@
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+<!-- <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <div formArrayName="arr" *ngFor="let a of formGroup.get('arr').controls;let i = index">
     
     <div [formGroupName]="i">
-    <label>
-      First Name:
-      <input type="text" formControlName="firstName">
-    </label>
-  
-    <label>
-      Last Name:
-      <input type="text" formControlName="lastName">
-    </label>
+      <label>
+        First Name:
+        <input type="text" formControlName="firstName">
+      </label>
+    
+      <label>
+        Last Name:
+        <input type="text" formControlName="lastName">
+      </label>
 
-    <button (click)="remove(i)">X</button>
-    </div>
-  </div>
+
     <div formGroupName="address">
         <h3>Address</h3>
       
@@ -37,12 +35,73 @@
           Zip Code:
           <input type="text" formControlName="zip">
         </label>
-      </div>
-
-      {{formGroup.status}}
+      
 
      <button   class="btn btn-success" type="submit" [disabled]="!formGroup.valid" >save</button>
-     <button   class="btn btn-success" type="submit"  (click)="addItem()">Add</button>
-     <button class="btn btn-primary" (click)="updateForm()">Update</button>         
-
+     <button   class="btn btn-success" type="button" (click)="addItem()">Add</button>
+     <button class="btn btn-primary" type="button" (click)="updateForm()">Update</button>     
+     <button type="button" class="btn btn-danger" (click)="remove(i)">Remove</button>
+</div>
+</div>
+</div>
   </form>
+ -->
+<div class="container">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  
+      <div class="form-group ">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email">
+      </div>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message"
+            *ngIf="formGroup.get('email').hasError(validation.type) && (formGroup.get('email').dirty || formGroup.get('email').touched)">
+            <span name="information-circle-outline"></span> {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      <div class="form-group ">
+        <label for="inputPassword4">Password</label>
+        <input type="password" class="form-control" formControlName="password" id="inputPassword4" placeholder="Password">  
+     </div>
+     <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message"
+          *ngIf="formGroup.get('password').hasError(validation.type) && (formGroup.get('password').dirty || formGroup.get('password').touched)">
+          <span name="information-circle-outline"></span> {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+     <div formGroupName="address">
+     <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input type="text" class="form-control" id="inputAddress" formControlName="address" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Address 2</label>
+      <input type="text" class="form-control" formControlName="address2" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" formControlName="city" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id="inputState" class="form-control" formControlName="state">
+          <option selected>Choose...</option>
+          <option value="pune">Pune</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" formControlName="zip" class="form-control" id="inputZip">
+      </div>
+    </div>
+    
+    
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </div>
+  </form>
+  </div>
