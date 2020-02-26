@@ -14,8 +14,16 @@ export class DataService {
       return a+b
     })
   }
-  getData(){
-    return this.http.get("https://puppygifs.tumblr.com/api/read/json#_=_")
+
+  getData(username:any,pass:any){
+    
+    let data = {
+      "email": username,
+      "password": pass
+    }
+    console.log(data)
+    let url="https://thawing-eyrie-14958.herokuapp.com/"
+    return this.http.post(url + 'users/login', data);
   }
 
   getLocation(){

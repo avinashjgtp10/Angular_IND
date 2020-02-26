@@ -18,6 +18,7 @@ import { ObservableExampleComponent } from './component/observable-example/obser
 import { SubjectComponent } from './component/subject/subject.component';
 import { TempleteFormComponent } from './component/templete-form/templete-form.component';
 import { ReactiveFormComponent } from './component/reactive-form/reactive-form.component';
+import { LoginComponent } from './component/login/login.component';
 
 
 
@@ -37,7 +38,8 @@ import { ReactiveFormComponent } from './component/reactive-form/reactive-form.c
     ObservableExampleComponent,
     SubjectComponent,
     TempleteFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
