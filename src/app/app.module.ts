@@ -19,7 +19,7 @@ import { SubjectComponent } from './component/subject/subject.component';
 import { TempleteFormComponent } from './component/templete-form/templete-form.component';
 import { ReactiveFormComponent } from './component/reactive-form/reactive-form.component';
 import { LoginComponent } from './component/login/login.component';
-
+import { AppRoutingModule } from "./app-routing.module"
 
 
 @NgModule({
@@ -45,6 +45,7 @@ import { LoginComponent } from './component/login/login.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
     HttpClientModule
   ],
   providers: [],
